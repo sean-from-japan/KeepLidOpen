@@ -1,0 +1,13 @@
+name: CI
+on:
+  push:
+  pull_request:
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Test decision logic
+        run: scripts/test.sh
+      - name: Build app
+        run: scripts/build.sh
