@@ -2,10 +2,12 @@
 
 [![CI](https://github.com/sean-from-japan/KeepLidOpen/actions/workflows/ci.yml/badge.svg)](https://github.com/sean-from-japan/KeepLidOpen/actions/workflows/ci.yml)
 
-Use a MacBook with the lid open and only the external monitor, keeping the
-built-in keyboard, Touch ID, camera and better cooling. KeepLidOpen switches the
-built-in display off when a monitor is connected and brings it back when the
-monitor goes away, so the Mac is never left with a black screen.
+Turn off the MacBook's built-in (internal) display while the lid stays open, and
+use only the external monitor, keeping the built-in keyboard, Touch ID, camera
+and better cooling. It is clamshell mode without closing the lid. KeepLidOpen
+switches the built-in display off when a monitor is connected and brings it back
+when the monitor goes away, so the Mac is never left with a black screen. It is
+free and open source (MIT), with per-monitor settings.
 
 [日本語の説明はこちら](#日本語)
 
@@ -121,6 +123,14 @@ The decisions themselves are in `Sources/Logic.swift` and tested in
 
 KeepLidOpen was written independently and contains no code from these projects.
 
+## Contributing
+
+Issues and pull requests are welcome. Reports from other Macs, monitors, docks
+and macOS versions are the most useful, because it has only been tested on one
+setup. Please include the relevant lines of `~/Library/Logs/KeepLidOpen.log`:
+it records every display's state on each change, which is usually enough to
+find the cause.
+
 ## License
 
 [MIT](LICENSE)
@@ -170,6 +180,10 @@ defaults write io.github.sean-from-japan.KeepLidOpen AppleLanguages -array ja
 - macOSの非公開APIを使っているため、macOSの更新で動かなくなる可能性があります。
 - 試したのは1台のMacと1台のモニターだけです。M3の無印モデルでは、内蔵画面を戻すときにWindowServerが止まるという報告がほかのツールで出ています。
 - 公証（notarization）は受けていません。各自のMacでソースからビルドする形です。
+
+### 報告・貢献
+
+issueやPRを歓迎しています。試したのが1台のMacと1台のモニターだけなので、ほかの機種・モニター・ドック・macOSのバージョンでの動作報告が特に役に立ちます。issueには `~/Library/Logs/KeepLidOpen.log` の該当する数行を添えてください。変化のたびに全画面の状態を記録しているので、多くの場合それで原因を特定できます。
 
 ### 似たツール
 
