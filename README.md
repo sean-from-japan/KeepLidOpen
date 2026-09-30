@@ -6,7 +6,7 @@ Turn off the MacBook's built-in (internal) display while the lid stays open, and
 use only the external monitor, keeping the built-in keyboard, Touch ID, camera
 and better cooling. It is clamshell mode without closing the lid. KeepLidOpen
 switches the built-in display off when a monitor is connected and brings it back
-when the monitor goes away, so the Mac is never left with a black screen. It is
+when the monitor goes away, reducing the chance of a black screen. It is
 free and open source (MIT), with per-monitor settings.
 
 [日本語の説明はこちら](#日本語)
@@ -107,6 +107,14 @@ The decisions themselves are in `Sources/Logic.swift` and tested in
   tried there.
 - Not notarized: it is built on your Mac from source.
 
+## Troubleshooting
+
+If installation fails or your Mac behaves differently, see the
+[troubleshooting guide and AI-assisted investigation prompt](docs/TROUBLESHOOTING_AI.md)
+(Japanese). It starts with recovery steps and gathers facts before suggesting a
+local change. For a public report, use the
+[bug report template](https://github.com/sean-from-japan/KeepLidOpen/issues/new/choose).
+
 ## Related projects
 
 - [SoloDisplay](https://github.com/fanckush/SoloDisplay): the same idea with a
@@ -180,6 +188,10 @@ defaults write io.github.sean-from-japan.KeepLidOpen AppleLanguages -array ja
 - macOSの非公開APIを使っているため、macOSの更新で動かなくなる可能性があります。
 - 試したのは1台のMacと1台のモニターだけです。M3の無印モデルでは、内蔵画面を戻すときにWindowServerが止まるという報告がほかのツールで出ています。
 - 公証（notarization）は受けていません。各自のMacでソースからビルドする形です。
+
+### 自分の環境で動かない場合
+
+[トラブルシューティングとAI調査用プロンプト](docs/TROUBLESHOOTING_AI.md)を参照してください。画面が真っ暗な場合は先に復旧し、ログと実装を照合して原因を調べる手順です。修正できた場合も、まだ動かない場合も、[不具合報告テンプレート](https://github.com/sean-from-japan/KeepLidOpen/issues/new/choose)で環境と結果を共有できます。
 
 ### 報告・貢献
 
