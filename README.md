@@ -9,6 +9,8 @@ monitor goes away, so the Mac is never left with a black screen.
 
 [日本語の説明はこちら](#日本語)
 
+Background, a survey of existing tools and what macOS actually did: [article on Zenn (Japanese)](https://zenn.dev/sean_from_japan/articles/macbook-lid-open-external-only).
+
 <img src="docs/panel-en.png" width="352" alt="KeepLidOpen panel: the built-in display is off and the Dell monitor is in use. A 'just for now' button, a switch that turns the built-in off whenever a monitor is connected, and a per-monitor choice of follow setting, off or on.">
 
 > **If the screen goes black:** plug the monitor back in, or close and reopen
@@ -127,7 +129,7 @@ KeepLidOpen was written independently and contains no code from these projects.
 
 ## 日本語
 
-MacBookのふたを開けたまま、外部モニターだけで使うためのメニューバーアプリです。内蔵キーボード、Touch ID、カメラをそのまま使えて、ふたを閉じるよりも熱がこもりにくくなります。モニターをつなぐと内蔵画面を切り、モニターが外れると内蔵画面を戻します。
+MacBookのふたを開けたまま、外部モニターだけで使うためのメニューバーアプリです。作った経緯と、既存のツールの調査、実測で分かったmacOSの挙動は [Zennの記事](https://zenn.dev/sean_from_japan/articles/macbook-lid-open-external-only) にまとめています。内蔵キーボード、Touch ID、カメラをそのまま使えて、ふたを閉じるよりも熱がこもりにくくなります。モニターをつなぐと内蔵画面を切り、モニターが外れると内蔵画面を戻します。
 
 > **画面が真っ暗になったとき:** モニターをつなぎ直すか、ふたを一度閉じて開けるか、ログアウトしてください（オフの状態はログイン中だけ有効です）。アプリを外すときは `scripts/uninstall.sh` を実行してください。
 
