@@ -20,7 +20,7 @@ before re-enabling it has nothing to work with. MacDisplay's `on` exited with
 was open.
 
 Re-enabling the **ID cached before the unplug** worked every time it was tried
-(four unplug or power-off events):
+(five unplug, power-off or sleep events):
 
 ```
 no monitor
@@ -44,7 +44,7 @@ displays: #11e active=1 online=1 vendor=756e6b6e model=76697274
 ```
 
 The vendor reads "unkn" in ASCII and the model "virt". It got a new ID each
-time (`#9`, `#10`, `#11`, `#12`). Counting it as an external monitor means
+time (`#9` to `#13`). Counting it as an external monitor means
 "a monitor is still connected, keep the built-in off", and the Mac stays black.
 
 An early version of KeepLidOpen filtered out vendor `0xFFFFFFFF` only (a guess,
@@ -64,6 +64,19 @@ A watcher that treats "no active monitor" as an unplug will switch the built-in
 on during every display sleep. KeepLidOpen does not recover while the displays
 sleep (`NSWorkspace.screensDidSleepNotification` / `willSleepNotification`) and
 reapplies the settings 3 s after they wake.
+
+Checked on 2026-09-30: through a 9-hour display sleep the built-in was not
+switched on, and it stayed off after the displays woke. When the monitor went
+away and the Mac itself slept straight after, the built-in was restored 3 s
+after wake:
+
+```
+no monitor
+NSWorkspaceWillSleepNotification
+NSWorkspaceDidWakeNotification
+restoring built-in
+cached-ID enable: 0
+```
 
 ## 4. A long-running process stopped seeing changes
 
@@ -96,9 +109,9 @@ logging out also brings the panel back.
 
 ## Not measured
 
-- Wake from system sleep with the built-in off. BetterDisplay users report that
-  macOS turns the built-in back on after wake (BetterDisplay discussion #3779);
-  KeepLidOpen reapplies its settings after wake, but that path has not been
-  checked by hand on this machine.
+- Wake from system sleep with the monitor still connected. BetterDisplay users
+  report that macOS turns the built-in back on after wake (BetterDisplay
+  discussion #3779); KeepLidOpen reapplies its settings after wake, but that
+  case has not happened on this machine yet.
 - Intel Macs, base M3 (where another tool reports a WindowServer hang when
   re-enabling), docks, DisplayLink, AirPlay and Sidecar displays.
