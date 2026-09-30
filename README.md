@@ -120,7 +120,9 @@ local change. For a public report, use the
 - [SoloDisplay](https://github.com/fanckush/SoloDisplay): the same idea with a
   signed DMG, Homebrew cask and automatic updates. Choose it if you want an
   installer; KeepLidOpen focuses on per-monitor settings, a "just for now"
-  switch and documented recovery behaviour.
+  switch and documented recovery behaviour. I also contributed its
+  [Shortcuts and Spotlight actions](https://github.com/fanckush/SoloDisplay/pull/16),
+  merged and released in v0.8.0.
 - [NoLid](https://github.com/NicolasMarino/nolid),
   [blackoutd](https://github.com/toobuntu/blackoutd),
   [InternalDisplayOff](https://github.com/RonaldPark89/InternalDisplayOff) and
@@ -199,4 +201,4 @@ issueやPRを歓迎しています。試したのが1台のMacと1台のモニ�
 
 ### 似たツール
 
-インストーラーと自動更新が必要なら [SoloDisplay](https://github.com/fanckush/SoloDisplay) が向いています。KeepLidOpenはモニターごとの設定、「今だけ」の切り替え、復旧の挙動を記録した資料に重点を置いています。コードはこれらのプロジェクトから流用していません。
+インストーラーと自動更新が必要なら [SoloDisplay](https://github.com/fanckush/SoloDisplay) が向いています。KeepLidOpenはモニターごとの設定、「今だけ」の切り替え、復旧の挙動を記録した資料に重点を置いています。SoloDisplayには、ショートカットアプリとSpotlightから表示構成を切り替える[機能をPR #16](https://github.com/fanckush/SoloDisplay/pull/16)で提供し、v0.8.0に採用されました。KeepLidOpenのコードはこれらのプロジェクトから流用していません。
